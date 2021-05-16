@@ -18,5 +18,16 @@ class PostController extends Controller
         return view('index')->with(['posts' => $post->getPaginateByLimit(5)]);
     }
     
+    /**
+     * Post詳細を表示する
+     *
+     * @param Object Post
+     * @return Reposnse post view
+     */
+    public function show(Post $post)
+    {
+        return view('show')->with(['post' => $post]);
+    }
+
     
 }
