@@ -40,17 +40,17 @@ class PostController extends Controller
         $post->fill($input)->save();
         return redirect('/posts/' . $post->id);
     }
-
-    public function create()
+    
+    public function edit(Post $post)
     {
-        return view('create');
-    }
-
-    public function store(PostRequest $request, Post $post)
-    {
-        $input = $request['post'];
-        $post->fill($input)->save();
-        return redirect('/posts/' . $post->id);
+        return view('edit')->with(['post' => $post]);
     }
     
+    public function update(PostRequest $request, Post $post)
+    {
+        $input_post = $request['post'];
+        $post->fill($input_post)->save();
+    
+        return redirect('/posts/' . $post->id);
+    }
 }
