@@ -20,8 +20,24 @@
             </div>
         </div>
         <p class="edit">[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>
+        <form action="/posts/delete/{{ $post->id }}" id="form_delete" method="post" style="display:inline">
+            @csrf
+            @method('DELETE')
+            <button type="submit" onClick="deletePost(event);return false;">delete</button> 
+        </form>
         <div class="footer">
             <a href="/">戻る</a>
         </div>
+        <script>
+            function deletePost(e){ 
+              "use strict"; 
+              if(window.confirm('本当に削除しますか？')){ 
+                document.getElementById('form_' + e.dataset.id).submit(); 
+              }else{ 
+                window.alert('キャンセルされました'); 
+                return false; 
+              } 
+            } 
+        </script>
     </body>
 </html>
