@@ -13,6 +13,11 @@
     </head>
     <body>
         <h1>Blog Name</h1>
+<<<<<<< HEAD
+        [<a href='/posts/create'>create</a>]
+=======
+        <p class="create_link">[<a href="/posts/create">create</a>]</p>
+>>>>>>> c52493c92208d26a2be1499c8f3095485d9061ed
         <div class='posts'>
             @foreach($posts as $post)
                 <div class='post'>
