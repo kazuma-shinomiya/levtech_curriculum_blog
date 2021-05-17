@@ -13,9 +13,8 @@
 //ルートの順番に
 Route::get('/', 'PostController@index');
 Route::get('/posts/create', 'PostController@create');
-Route::get('/posts/{post}', 'PostController@show');
 Route::get('/posts/{post}/edit', 'PostController@edit');
-
-Route::post('/posts', 'PostController@store');
-
+Route::delete('/posts/delete/{post}', 'PostController@delete');
 Route::put('/posts/{post}', 'PostController@update');
+Route::get('/posts/{post}', 'PostController@show');
+Route::post('/posts', 'PostController@store');
